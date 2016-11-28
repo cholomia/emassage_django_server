@@ -51,3 +51,11 @@ class Choice(models.Model):
 
     def __str__(self):
         return str(self.id) + ": Question #" + str(self.question.id) + " " + self.body
+
+
+class MobileId(models.Model):
+    user = models.ForeignKey('auth.User', related_name='threads', on_delete=models.CASCADE)
+    token = models.CharField(max_length=1000)
+
+    def __str__(self):
+        return self.user.username + " : " + self.token
