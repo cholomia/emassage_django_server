@@ -1,7 +1,5 @@
 #!/bin/bash
-if [ ! -d $OPENSHIFT_DATA_DIR/media ]; then mkdir $OPENSHIFT_DATA_DIR/media fi
 
-ln -sf $OPENSHIFT_DATA_DIR/media $OPENSHIFT_REPO_DIR/wsgi/static/media
 # Use this script to run one-off commands inside a container of a pod where your
 # Python application code lives in.
 
