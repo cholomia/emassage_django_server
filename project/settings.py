@@ -109,3 +109,7 @@ MEDIA_ROOT = os.environ.get('OPENSHIFT_DATA_DIR', '')
 MEDIA_URL = '/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 20
+}

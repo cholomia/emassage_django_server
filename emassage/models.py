@@ -34,3 +34,20 @@ class Lesson(models.Model):
 
     def __str__(self):
         return str(self.id) + ": " + self.title
+
+
+class Question(models.Model):
+    lesson = models.ForeignKey(Lesson, related_name='questions', on_delete=models.CASCADE)
+    body = models.TextField()
+    answer = models.TextField()
+
+    def __str__(self):
+        return str(self.id) + ": Lesson #" + str(self.lesson.id) + " " + self.body
+
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, related_name='choices', on_delete=models.CASCADE)
+    body = models.TextField()
+
+    def __str__(self):
+        return str(self.id) + ": Question #" + str(self.question.id) + " " + self.body
