@@ -112,5 +112,5 @@ MEDIA_URL = '/media/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 REST_FRAMEWORK = {
-    'PAGE_SIZE': 20
+    'PAGE_SIZE': 25
 }
