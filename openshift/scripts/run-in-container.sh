@@ -1,5 +1,7 @@
 #!/bin/bash
+if [ ! -d $OPENSHIFT_DATA_DIR/media ]; then mkdir $OPENSHIFT_DATA_DIR/media fi
 
+ln -sf $OPENSHIFT_DATA_DIR/media $OPENSHIFT_REPO_DIR/wsgi/static/media
 # Use this script to run one-off commands inside a container of a pod where your
 # Python application code lives in.
 
@@ -30,7 +32,6 @@
 # Or both together:
 #
 #     POD_NAME=frontend POD_INDEX=2 ./run-in-container.sh ./manage.py shell
-
 
 # Get name of a currently deployed pod by label and index
 POD_INSTANCE_NAME=`oc get pods \
