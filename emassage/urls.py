@@ -8,7 +8,7 @@ router = DefaultRouter()
 router.register(r'courses', CourseViewSet)
 
 urlpatterns = [
-    url(r'^api/$', include(router.urls)),
+    url(r'^', include(router.urls)),
 ]
 
 urlpatterns = format_suffix_patterns(urlpatterns)
