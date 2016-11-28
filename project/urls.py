@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^health$', health),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^emassage/', include('emassage.urls'))
+    url(r'^emassage/$', include('emassage.urls'))
 ]
 
 if settings.DEBUG:
